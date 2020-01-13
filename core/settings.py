@@ -26,7 +26,7 @@ SECRET_KEY = 'se42g(j%x7n7#h*61dsn-8r8ar$4ej&+!ys9$-zcvza^efda^r'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get("DB_NAME", "postgres"),
+        'USER': os.environ.get("DB_USER", "postgres"),
+        'PASSWORD': os.environ.get("DB_PASSWORD", ""),
+        'HOST': os.environ.get("DB_HOST", 'localhost'),
+        'PORT': os.environ.get("DB_PORT", 5432),
     }
 }
 
@@ -141,7 +145,6 @@ CACHE_MIDDLEWARE_SECONDS = 60
 APP_NAME = "MarketPeak"
 APP_TITLE = "Read internet."
 APP_DESCRIPTION = APP_TITLE
-APP_HOST = "https://infomate.club"
 
 AUTH_COOKIE_NAME = "jwt"
 AUTH_COOKIE_MAX_AGE = 300 * 24 * 60 * 60  # 300 days
