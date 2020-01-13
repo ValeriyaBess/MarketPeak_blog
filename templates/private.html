@@ -1,0 +1,63 @@
+{% extends 'base/index.html' %}
+{% block links %}
+    <link href="/static/css/dark.css" rel="stylesheet">
+
+{% endblock %}
+{% block logo %}<h5 class="m-0">Home</h5>{% endblock %}
+
+
+{% block content %}
+    <div class="container container_width_max">
+            <div class="club-block"
+                 style="">
+                <div class="ratio-16-9"></div>
+                <div class="club-title">
+                    <h1><a href="/auth/login/">MarketPeak.Club</a></h1>
+                    <h4>Everything interesting happens behind closed doors.</h4>
+                </div>
+        </div>
+    </div>
+    <div class="container mt-4" style="max-width: 800px;">
+        <div class="row">
+            <div class="col">
+                <h1 class="text-center">WHY?</h1>
+
+                <p>
+                    The Internet has become too big. Openness gave it variety, but it made everything superficial. Good
+                    ideas aren't born in a crowd.
+                </p>
+
+                <p>
+                    The Club is our private closed society, where we discuss important topics away from the big
+                    internet.
+                </p>
+
+                <p>
+                    Club members have special privileges: they can write comments, see closed and extended versions of
+                    posts.
+                </p>
+
+                <p>
+                    They also automatically receive premium access to new projects, moves and buns from the Club.
+                </p>
+                <p style="text-align: center">
+                    <a href="/auth/login/" class="button button-black" target="_blank">Login</a>
+                    <span class="club-to-patreon"> &nbsp;&nbsp;&nbsp; or &nbsp;&nbsp;&nbsp;
+                        <a href="https://patreon.com/marketpeak" target="_blank"><i class="fab fa-patreon" aria-hidden="true"></i>&nbsp;Patreon</a>
+                    </span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container my-4">
+        <div class="row justify-content-center my-2">
+            <div class="col-auto">
+                <a class="mx-4" href="https://youtube.com" target="_blank"><i class="fab fa-youtube"
+                                                                              aria-hidden="true"></i>&nbsp;YouTube</a>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}

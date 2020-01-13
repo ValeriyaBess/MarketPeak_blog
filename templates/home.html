@@ -1,0 +1,77 @@
+{% extends 'base/index.html' %}
+{% block content %}
+    <div class="container">
+        <div class="row justify-content-center my-2">
+            <div class="col-auto">
+                <a class="mx-4" href="https://youtube.com" target="_blank"><i class="fab fa-youtube"
+                                                                              aria-hidden="true"></i>&nbsp;YouTube</a>
+                <a class="mx-4" href="https://www.patreon.com/marketpeak" target="_blank"><i class="fab fa-patreon"
+                                                                                             aria-hidden="true"></i>&nbsp;Patreon</a>
+            </div>
+        </div>
+    </div>
+
+    {% if general %}
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-sm-12R my-2 article">
+                    <a href="{% url 'blog:post' name=general.url_name %}" class="row h-100 p-2">
+                        <div class="item-image" style="
+                                {% if general.image %}background-image: linear-gradient(rgba(0,0,0,0.80), rgba(0,0,0,0.50)), url('{{ general.image.url }}');{% endif %}"></div>
+                        <div class="col-12 h3 align-self-center info-text text-center">
+                            <h2 class="mb-0 px-2 bg-white text-dark d-inline-block">{{ general.title }}</h2>
+                            <br>
+                            <h4 class="mb-0 px-2 bg-white text-dark d-inline-block">How register in project?</h4>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+
+    <div class="container">
+        {% regroup posts by category as posts_by_categorys %}
+        {% for posts_by_category in posts_by_categorys %}
+            {% if posts_by_category.list %}
+                <div class="row mt-4">
+                    <div class="col  text-center">
+                        <a href="/blog"><h3 class="my-2">{{ posts_by_category.grouper.name }}</h3></a>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    {% for post in posts_by_category.list %}
+                        <a href="{% url 'blog:post' name=post.url_name %}"
+                           class="col-lg-{{ post.col }} col-md-6 col-sm-12 my-2 article">
+                            <div class="row h-100 p-2 justify-content-center">
+                                <div class="col-12 item-image"
+                                     style="{% if post.image %}background-image: linear-gradient(rgba(0,0,0,0.80), rgba(0,0,0,0.50)),
+                                         url('{{ post.image.url }}');
+                                     {% endif %}"></div>
+                                <div class="col-12 h3 align-self-center info-text text-center">
+                                    <h4 class="mb-0 px-2 text-dark title-post d-inline mx-2">{{ post.title }}</h4>
+                                    <br>
+                                    {% if post.mini_title %}
+                                        <h6 class="mb-0 px-2 bg-white text-dark d-inline-block title-post">
+                                            H{{ post.title_description }}</h6>{% endif %}
+                                </div>
+                            </div>
+                        </a>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div class="container">
+        <div class="row justify-content-center my-4">
+            <div class="col-auto">
+                <a class="mx-4 h2" href="https://youtube.com" target="_blank"><i class="fab fa-youtube"
+                                                                                 aria-hidden="true"></i>&nbsp;YouTube</a>
+            </div>
+            <div class="col-auto">
+                <a class="mx-4 h2" href="https://www.patreon.com/marketpeak" target="_blank"><i class="fab fa-patreon"
+                                                                                                aria-hidden="true"></i>&nbsp;Patreon</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

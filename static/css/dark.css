@@ -1,0 +1,80 @@
+body {
+    background-color: #000 !important;
+    color: white !important;
+
+}
+
+a {
+    color: white;
+}
+
+.logo {
+    border-collapse: collapse;
+    /*text-shadow: 0 0 5px #fff, 0 0 5px #fff, 0 0 5px #fff, 0 0 10px #ff0e28, 0 0 10px #ff0e28, 0 0 40px #ff0e28, 0 0 20px #ff0e28, 0 0 20px #ff0e28;*/
+}
+
+
+.club {
+    width: 100%;
+    overflow: hidden;
+}
+
+
+.ratio-16-9 {
+    display: block;
+    padding-bottom: 50%;
+
+}
+
+.club-title {
+    display: block;
+    position: absolute;
+    top: 25%;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 110%;
+    color: white;
+}
+
+.club-title h1 {
+    font-size: 6vw;
+    color: #FFF;
+    text-decoration: none;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+    text-shadow: 0 0 5px #fff, 0 0 5px #fff, 0 0 5px #fff, 0 0 10px #0287bf, 0 0 10px #0287bf, 0 0 40px #0287bf, 0 0 20px #0287bf, 0 0 20px #0287bf;
+    margin: 0 10px 5px;
+}
+
+.club-title h1:hover {
+    color: #FFF;
+    text-shadow: 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff, 0 0 20px #0287bf, 0 0 30px #0287bf, 0 0 40px #0287bf, 0 0 50px #0287bf, 0 0 50px #0287bf;
+}
+
+
+.club-block {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    max-height: 1000px;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/static/image/private.jpg') no-repeat;
+    -moz-background-size: 100%; /* Firefox 3.6+ */
+    -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+    -o-background-size: 100%; /* Opera 9.6+ */
+    background-size: 100%;
+}
+
+
+p {
+    font-size: 120%;
+    color: white;
+}
+
+.button-black {
+    background-color: #000;
+    color: #FFF;
+    border-color: #FFF;
+}
